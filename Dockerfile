@@ -6,7 +6,8 @@ RUN apk add --update --no-cache \
     sed \
     grep \
     bc \
-    coreutils
+    coreutils \
+    curl
     
 # Install yq
 ENV YQ_VERSION="2.4.0"
