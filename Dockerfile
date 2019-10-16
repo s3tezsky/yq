@@ -6,6 +6,9 @@ RUN apk add --update --no-cache \
     sed \
     grep \
     bc \
-    coreutils \
-    py-pip \
-    && pip install --no-cache-dir yq==2.4.1
+    coreutils
+    
+# Install yq
+ENV YQ_VERSION="2.4.0"
+RUN curl --location https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 --output /usr/local/bin/yq && \
+    chmod +x /usr/local/bin/yq
